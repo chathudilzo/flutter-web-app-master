@@ -38,9 +38,26 @@ class _HomePageState extends State<HomePage> {
         : 1;
 
     return Scaffold(
+      drawer: MenuDrawer(),
       extendBodyBehindAppBar: true,
-      appBar: PreferredSize(child: TopBarContents(_opacity), preferredSize: Size(screenSize.width, 70)),
+      appBar:screenSize.width<800?AppBar(
+        iconTheme: IconThemeData(color: Colors.lightBlue),
+        elevation: 0,
+        backgroundColor: Colors.white.withOpacity(_opacity),
+        title: Text(
+                      'SriLanka',
+                      style: TextStyle(
+                        color: Color(0xFF077bd7),
+                        fontSize: 26,
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 3,
+                      ),
+                    ),
+      ): PreferredSize(child: TopBarContents(_opacity), 
+      preferredSize: Size(screenSize.width, 70)),
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
             children: [
               Stack(
@@ -55,13 +72,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-      Column(children: [
-        FloatingQuickAccessBar(screenSize: screenSize),
-      FeaturedHeading(screenSize: screenSize),
-      FeaturedTiles(screenSize: screenSize),
-      MainHeading(screenSize: screenSize),
-      MainCarousel()
-      ],)
+                    Column(children: [
+                      FloatingQuickAccessBar(screenSize: screenSize),
+                    FeaturedHeading(screenSize: screenSize),
+                    FeaturedTiles(screenSize: screenSize),
+                    MainHeading(screenSize: screenSize),
+                    MainCarousel(),
+                    SizedBox(height: screenSize.height/10,),
+                    BottomBar()
+                    ],)
                 ],
               ),
       
