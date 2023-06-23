@@ -20,7 +20,7 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Login',
+                  'Home',
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
               ),
@@ -34,7 +34,7 @@ class MenuDrawer extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: Text(
-                  'Sign Up',
+                  'About',
                   style: TextStyle(color: Colors.white, fontSize: 22),
                 ),
               ),
@@ -70,9 +70,9 @@ class MenuDrawer extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Copyright © 2021 | DBestech',
+                    'Copyright © 2021 | Dilzo',
                     style: TextStyle(
-                      color: Colors.blueGrey.shade300,
+                      color: Color.fromARGB(255, 211, 215, 218),
                       fontSize: 14,
                     ),
                   ),
